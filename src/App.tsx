@@ -17,7 +17,10 @@ export default function App() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormInput>();
+  } = useForm<FormInput>(
+    // 初期値として、名前の入力欄に「山田太郎」・年齢の入力欄に「25」を与える
+    { defaultValues: { name: "山田太郎", age: 25 } }
+  );
 
   // submitイベントが発生して、かつバリデーションが成功した場合に実行する関数。
   // サンプルコードなので、入力値（data）をコンソール出力するだけの処理を用意。
